@@ -28,7 +28,7 @@ Parses `input.json`, extracts the `gptOutput` markdown, and writes it to a local
 
 Expected output:
 ```
-Database seeded successfully (4,312 characters written).
+Database seeded successfully (~ characters written).
 ```
 
 ### 3. Start the API server
