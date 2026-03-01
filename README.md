@@ -91,17 +91,7 @@ curl -X POST http://localhost:8000/analysis \
 
 ---
 
-## Interactive Docs (Swagger UI)
 
-FastAPI auto-generates an interactive docs page:
-
-```
-http://localhost:8000/docs
-```
-
-Use this to test both endpoints directly in the browser without needing curl.
-
----
 
 ## Project Structure
 
@@ -118,8 +108,4 @@ TuckAdvisors/
 
 ---
 
-## Design Notes
 
-- **Persistence:** SQLite (`analysis.db`) is file-based and survives server restarts. The database holds exactly one row — the current markdown string — updated in place on every POST.
-- **No in-memory state:** The server reads from and writes to SQLite on every request, so restarting the server never loses appended content.
-- **Parser:** `parser.py` is intentionally kept as a pure extraction utility — it loads the JSON and returns the `gptOutput` string with no side effects, making it independently testable.
